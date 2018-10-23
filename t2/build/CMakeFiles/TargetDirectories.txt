@@ -1,1 +1,0 @@
-/home/liyingmin/proj/my_proj/cmake/t2/build/bin/CMakeFiles/hello.dir
