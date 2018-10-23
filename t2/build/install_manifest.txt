@@ -1,0 +1,5 @@
+/tmp/t2/usr/share/doc/cmake/t2/license
+/tmp/t2/usr/share/doc/cmake/t2/README.md
+/tmp/t2/usr/bin/runhello.sh
+/tmp/t2/usr/share/doc/cmake/t2/hello.txt
+/tmp/t2/usr/bin/hello
