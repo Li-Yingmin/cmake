@@ -1,4 +1,3 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-PROJECT(HELLOLIB)
-ADD_SUBDIRECTORY(lib subdir_lib)
-INSTALL(PROGRAMS autocmake.sh DESTINATION bin)
+cmake_minimum_required(VERSION 2.8)
+project(HELLOLIB)
+add_subdirectory(lib)

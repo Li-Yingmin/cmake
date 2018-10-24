@@ -1,4 +1,15 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-SET(LIBHELLO_SRC hello.c)
-ADD_LIBRARY(hello SHARED ${LIBHELLO_SRC})
-SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib_so)
+cmake_minimum_required(VERSION 2.8)
+set(LIBHELLO_SRC hello.c)
+add_library(hello SHARED ${LIBHELLO_SRC})
+add_library(hello_static STATIC ${LIBHELLO_SRC})
+
+set_target_properties(hello_static PROPERTIES OUTPUT_NAME "hello")
+get_target_property(OUTPUT_VALUE hello_static OUTPUT_NAME)
+message(STATUS "This is the target hello_static OUTPUT_NAME: " ${OUTPUT_VALUE})
+set_target_properties(hello PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+set_target_properties(hello_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+set_target_properties(hello PROPERTIES VERSION 1.3 SOVERSION 1.2)
+install(TARGETS hello hello_static
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
+install(FILES hello.h DESTINATION include/hello)
